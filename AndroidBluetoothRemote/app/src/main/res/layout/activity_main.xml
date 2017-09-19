@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.harding.cwilson14.bluetootharduinocarcontrol.MainActivity">
+
+    <TextView
+        android:id="@+id/labelStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/labelStatus"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelStatusValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/statusDisconnected"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@id/labelStatus"
+        app:layout_constraintTop_toTopOf="@id/labelStatus" />
+
+    <Button
+        android:id="@+id/buttonConnect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonConnect"
+        android:onClick="connectOnClick"
+        app:layout_constraintBaseline_toBaselineOf="@id/labelStatusValue"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/labelLeftMotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelLeftMotor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/labelStatus"
+        app:layout_constraintTop_toBottomOf="@id/labelStatus" />
+
+    <TextView
+        android:id="@+id/labelLeftMotorValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@id/labelLeftMotor"
+        app:layout_constraintTop_toTopOf="@id/labelLeftMotor" />
+
+    <TextView
+        android:id="@+id/labelRightMotor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/labelRightMotor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="@id/labelLeftMotor"
+        app:layout_constraintTop_toBottomOf="@id/labelLeftMotor" />
+
+    <TextView
+        android:id="@+id/labelRightMotorValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@id/labelRightMotor"
+        app:layout_constraintTop_toTopOf="@id/labelRightMotor" />
+
+    <TextView
+        android:id="@+id/labelUseSensors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/labelUseSensors"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toBottomOf="@id/labelRightMotor"
+        app:layout_constraintStart_toStartOf="@id/labelRightMotor" />
+
+    <Switch
+        android:id="@+id/switchUseSensors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toTopOf="@id/labelUseSensors"
+        app:layout_constraintStart_toEndOf="@id/labelUseSensors"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/labelSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelSpeed"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toBottomOf="@id/labelUseSensors"
+        app:layout_constraintStart_toStartOf="@id/labelUseSensors"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/labelSide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelSide"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toBottomOf="@id/labelSpeed"
+        app:layout_constraintStart_toStartOf="@id/labelSpeed"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/labelDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelDirection"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toBottomOf="@id/labelSide"
+        app:layout_constraintStart_toStartOf="@id/labelSide"
+        android:layout_marginTop="16dp" />
+
+    <SeekBar
+        android:id="@+id/seekbarSpeed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:max="255"
+        app:layout_constraintTop_toTopOf="@+id/labelSpeed"
+        app:layout_constraintBottom_toBottomOf="@id/labelSpeed"
+        app:layout_constraintStart_toEndOf="@id/labelSpeed"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinnerSide"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/labelSide"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="343dp" />
+
+    <Spinner
+        android:id="@+id/spinnerDirection"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/labelDirection"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="343dp" />
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonSend"
+        android:onClick="sendInstructionsOnClick"
+        app:layout_constraintTop_toBottomOf="@id/labelDirection"
+        app:layout_constraintStart_toStartOf="@id/labelDirection"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/buttonStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonStop"
+        android:onClick="sendStop"
+        app:layout_constraintTop_toTopOf="@id/buttonSend"
+        app:layout_constraintStart_toEndOf="@id/buttonSend"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/labelTiltX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelTiltX"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toBottomOf="@id/buttonSend"
+        app:layout_constraintStart_toStartOf="@id/labelSide"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/labelTiltXValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toTopOf="@id/labelTiltX"
+        app:layout_constraintStart_toEndOf="@id/labelTiltX"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/labelTiltY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelTiltY"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toBottomOf="@id/labelTiltX"
+        app:layout_constraintStart_toStartOf="@id/labelTiltX"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/labelTiltYValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toTopOf="@id/labelTiltY"
+        app:layout_constraintStart_toEndOf="@id/labelTiltY"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/labelTiltZ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/labelTiltZ"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toBottomOf="@id/labelTiltY"
+        app:layout_constraintStart_toStartOf="@id/labelTiltY"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/labelTiltZValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintTop_toTopOf="@id/labelTiltZ"
+        app:layout_constraintStart_toEndOf="@id/labelTiltZ"
+        android:layout_marginStart="8dp" />
+</android.support.constraint.ConstraintLayout>

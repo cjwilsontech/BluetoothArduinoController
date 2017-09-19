@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Car Remote</string>
+    <string name="buttonSend">Send</string>
+    <string name="buttonStop">Stop All</string>
+    <string name="labelSide">Side:</string>
+    <string name="labelDirection">Direction:</string>
+    <string name="labelSpeed">Speed:</string>
+    <string name="labelStatus">Status:</string>
+    <string name="statusDisconnected">Disconnected</string>
+    <string name="statusConnecting">Connecting...</string>
+    <string name="statusConnected">Connected</string>
+    <string name="buttonConnect">Connect</string>
+    <string name="labelTiltX">Tilt X:</string>
+    <string name="labelTiltZ">Tilt Z:</string>
+    <string name="labelTiltY">Tilt Y:</string>
+    <string name="labelUseSensors">Use sensors:</string>
+    <string name="labelLeftMotor">Left Motor:</string>
+    <string name="labelRightMotor">Right Motor:</string>
+    <string name="percentage">%d&#x0025;</string>
+    <string name="bluetoothNotSupported">Device unsupported!</string>
+    <string-array name="sides_array">
+        <item>Left</item>
+        <item>Right</item>
+        <item>Both</item>
+    </string-array>
+    <string-array name="directions_array">
+        <item>Forwards</item>
+        <item>Backwards</item>
+    </string-array>
+</resources>
