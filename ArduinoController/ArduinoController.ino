@@ -3,6 +3,8 @@ const int MOTOR_LEFT = 3;
 const int MOTOR_RIGHT = 11;
 const int DIRECTION_LEFT = 12;
 const int DIRECTION_RIGHT = 13;
+const int LIGHT = 10;
+int count = 0;
 enum SIDE {
   LEFT,
   RIGHT
@@ -32,10 +34,20 @@ void setup() {
   pinMode(MOTOR_RIGHT, OUTPUT);
   pinMode(DIRECTION_LEFT, OUTPUT);
   pinMode(DIRECTION_RIGHT, OUTPUT);
+  pinMode(LIGHT, OUTPUT);
+  analogWrite(LIGHT, 255);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  count++;
+  if (count > 128) {
+    analogWrite(LIGHT, 255);
+  } else if (count > 255) {
+    count = 0;
+  } else {
+    analogWrite(LIGHT, 0);
+  }
   if (Serial.available()) {
       // Get the data packet.
       byte data = (byte)Serial.read();
